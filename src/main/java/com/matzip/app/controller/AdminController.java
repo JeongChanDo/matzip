@@ -43,6 +43,8 @@ public class AdminController {
 			(HttpServletRequest request, @RequestParam(value="pageNo",required=false,defaultValue="1") String no1,
 					@RequestParam(value="no",required=false) String no2){
 		
+		//어드민 컨트롤러에 주석을 달았습니다.
+		
 		ModelAndView modelAndView = new ModelAndView();
 		Map<String,Object> modelMap = new HashMap<String,Object>();
 		String destination = "admin/main";
