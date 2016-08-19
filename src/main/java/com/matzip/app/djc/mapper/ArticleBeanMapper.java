@@ -36,5 +36,8 @@ public interface ArticleBeanMapper {
 	})
 	public void updateArticle(ArticleBean a);
 	
-	
+	@Select({
+		"select count(*) from matzip_article where time like '2016-08-%' and board_no = #{boardNo}"
+	})
+	public int getMonthlyWrittenArticleCount(int boardNo);
 }

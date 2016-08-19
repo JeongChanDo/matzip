@@ -59,6 +59,10 @@ public class AdminController {
 			modelMap.put("latestMember",memberService.getMemberBeanListDesc().subList(0,5));
 			modelMap.put("totalMemberCount",memberService.getTotalMemberCount());
 			
+			
+			String monthlyArticleCountData = articleService.getMonthlyArticlesCountData();
+			modelMap.put("monthlyArticleCountData", monthlyArticleCountData);
+			
 			adminService.adminPageNo1RequestProcess(request);
 			String cityCount = rTest.result();
 

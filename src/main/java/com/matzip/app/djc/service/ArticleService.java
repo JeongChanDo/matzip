@@ -44,6 +44,55 @@ public class ArticleService {
 	}
 	
 	
+	public String getMonthlyArticlesCountData(){
+		String result = null;
+		String before = null;
+		
+		int y = 0;
+		
+		for(int i = 1; i <=8; i++){
+			String value = null;
+			value = "{name:";
+			
+			y = articleDao.getMonthlyWrittenArticleCount(i);
+			if(i==1){
+				value += "'지역별 맛집후기";
+			}else if(i==2){
+				value += "'메뉴별 맛집후기";				
+			}else if(i==3){
+				value += "'가격별 맛집후기";				
+			}else if(i==4){
+				value += "'가짜 맛집후기";
+			}else if(i==5){
+				value += "'공지사항";
+			}else if(i==6){
+				value += "'Q&A";				
+			}else if(i==7){
+				value += "'추천레시피";				
+			}else if(i==8){
+				value += "'자유게시판";
+			}
+		
+
+			value += "("+y+")',y:"+y+"}";
+			
+			if(i==8){
+				
+			}else{
+				value += ",";
+			}
+			System.out.println("value : "+ value);
+		
+			if(i==1){
+				before = value;
+			}else{
+				before += value;
+			}
+		}
+		result = "["+before+"]";
+		System.out.println("result : " + result);
+		return result;
+	}
 	
 	public List<ArticleBean> getCommentList(int articleNo){
 		return articleDao.getCommentList(articleNo);

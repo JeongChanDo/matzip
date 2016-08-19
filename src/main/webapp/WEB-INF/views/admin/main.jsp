@@ -129,7 +129,7 @@
 	</div>
 	
 	<div id="weekRequestCountGraph">
-		<h3>월간 요청량 추이 그래프</h3>
+		<h3>월간 요청 추이 그래프</h3>
 		<div id="container4"></div>
 		<script>
 			$(function () {
@@ -138,7 +138,7 @@
 			            type: 'area'
 			        },
 			        title: {
-			            text: '요청량 추이'
+			            text: '요청'
 			        },
 			        xAxis: {
 			            categories: ${monthlyRequestDay}
@@ -147,9 +147,55 @@
 			            enabled: false
 			        },
 			        series: [{
-			            name: '요청일',
+			            name: '요청',
 			            data: ${monthlyRequestMoment}
 			        }]
+			    });
+			});
+		</script>
+	</div>
+	
+	<div>
+		<h3>이번달 작성글 비율</h3>
+		<div id="container5"></div>
+		<script>
+			$(function () {
+	
+			    $(document).ready(function () {
+	
+			        // Build the chart
+			        $('#container5').highcharts({
+			            chart: {
+			                plotBackgroundColor: null,
+			                plotBorderWidth: null,
+			                plotShadow: false,
+			                type: 'pie'
+			            },
+			            title: {
+			                text: ''
+			            },
+			            tooltip: {
+			                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+			            },
+			            plotOptions: {
+			            	pie: {
+			                    allowPointSelect: true,
+			                    cursor: 'pointer',
+			                    dataLabels: {
+			                        enabled: true,
+			                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+			                        style: {
+			                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+			                        }
+			                    }
+			                }
+			            },
+			            series: [{
+			                name: 'Brands',
+			                colorByPoint: true,
+			                data: ${monthlyArticleCountData}
+			            }]
+			        });
 			    });
 			});
 		</script>

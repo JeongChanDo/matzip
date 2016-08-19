@@ -58,7 +58,7 @@ public class MongoCommonsDao {
 		System.out.println("오늘은  " +year+" " + month+" "+ day +" 일 입니다.");
 		int count = 0;
 		int beforeCount = 0;
-		for(int i = 1 ; i<= day ; i++){
+		for(int i = 17 ; i<= day ; i++){
 			
 	
 		//	Bson bson = BsonDocument.parse("{time:{$lt:new Date(new Date().setDate(new Date().getDate()-("+i+"-1))), $gte: new Date(new Date().setDate(new Date().getDate())-"+i+"))}}");
@@ -67,26 +67,29 @@ public class MongoCommonsDao {
 			Bson bson = BsonDocument.parse("{time:{ $gte:new Date("+year+","+(month-1)+",1), $lt: new Date("+year+","+(month-1)+","+i+")} }");
 			
 			count = (int) getLogCol().count(bson);
-			
+			System.out.println("count : " + count +"       beforeCount : " + beforeCount);
 			count = count - beforeCount;
+			System.out.println("count : " + count);
 			//19일동안 데이터 18일 동안데이터
 			
 			System.out.println(i +"   : " +count);
 			
 			
 			if(i == day){
-				monthlyRequestDay += i+"]";
+				monthlyRequestDay += "'0"+(month)+"-"+i+"']";
 				monthlyRequestMoment += count +"]";
 				break;
 			}
-			monthlyRequestDay += i+",";
+			monthlyRequestDay +="'0"+(month)+"-"+i+"',";
 			monthlyRequestMoment += count +",";
+
+			beforeCount += count;
+	
 		}
 	
 		System.out.println("monthlyRequestDay : " + monthlyRequestDay);
 		System.out.println("monthlyRequestMoment : " + monthlyRequestMoment);
 		
-		beforeCount = count;
 		// 18일 18일
 		request.setAttribute("monthlyRequestDay", monthlyRequestDay);
 		request.setAttribute("monthlyRequestMoment", monthlyRequestMoment);

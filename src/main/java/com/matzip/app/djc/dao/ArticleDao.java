@@ -48,6 +48,11 @@ public class ArticleDao {
 	
 	String sql;
 	
+	public int getMonthlyWrittenArticleCount(int boardNo){
+		ArticleBeanMapper mapper = sqlSessionTemplate.getMapper(ArticleBeanMapper.class);
+		return mapper.getMonthlyWrittenArticleCount(boardNo);
+	}
+	
 	public List<ArticleBean> getLatestMemberArticleList(String id){
 		ArticleBeanMapper mapper = sqlSessionTemplate.getMapper(ArticleBeanMapper.class);
 		return mapper.getLatestMemberArticleList(id);
