@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+
+#memberJoinForm {
+ 	border: 1px solid #DDDDDD;
+    width: 600px;
+    margin: 10px auto;
+    padding: 20px;
+    background: white;
+ }
+ #memberJoin {
+ 	text-align : center;
+    text-shadow: 5px 5px 5px #CCC;
+    margin-top: 5px;        
+    margin-bottom: 20px;
+    
+ }

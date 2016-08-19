@@ -1,0 +1,124 @@
+@CHARSET "UTF-8";
+
+/*
+
+   지도검색 화면을 위한 CSS
+  1) header
+  2) nav 메뉴
+  3) side : 회원사진 / 로그아웃 / 나의정보
+  4) tap 메뉴 : 지역별 / 메뉴별 / 가격별
+  5) footer	
+  
+  */
+
+
+/* 탭메뉴 */
+
+	.seaTabs {
+		display:block;
+	  margin: 20px auto; 
+	  box-sizing: border-box; 
+	  }
+	.seaTabs_switch {		 
+	  overflow: hidden; 
+	  }	  
+	.seaTabs_tab {
+	  float: left;
+	  cursor: pointer;
+	}
+
+	.seaTabs_switch_active { cursor: default; }
+	.seaTabs_item { display: none; }
+	.seaTabs_content_active { display: block; }
+
+	.seaTabs_switch { }
+
+	.seaTabs_tab {	 
+	  width: 90px;
+	  padding: 10px 10px;
+	  border-width: 1px 1px 1px 0;
+	  border-style: solid;
+	  border-color: #ccc;
+	  background: #eaeaea;
+	}
+
+	.seaTabs_tab:first-child {
+	  border-left: 1px solid #ccc;
+	  border-top-left-radius: 5px;
+	}
+
+	.seaTabs_tab:last-child { border-top-right-radius: 5px; }
+
+	.seaTabs_content { 
+	  margin-top: -1px;	 
+	  }
+
+	.seaTabs_item {
+	  width: 222px;
+	  padding: 10px 20px;
+	  border: 1px solid #ccc;
+	  border-radius: 0 0 5px 5px;
+	}
+
+	.seaTabs_switch_active {
+	  border-bottom: 1px solid #fff;
+	  background: #fff;
+	}
+	.dongRadio{
+	 width: 70px;
+	}
+	
+/* 컨텐츠 영역  */	
+	#content {
+	  float:left;	  
+	 /*  width: 800px; */
+	  width: 630px;
+	  height: 800px;
+	}	
+	
+  /* 아래부분 #map은 필요없는 부분인데.. 삭제하면 그림의 위치가 달라짐.. 정말 이상함...ㅠㅠ */
+  	
+  #map {
+       border: 1px solid black;
+     /*   margin: 10px 20px 50px 100px ;
+       width: 900px;
+       height: 900px;       
+       display: inline;  */
+    }
+    #mapBox {
+     border: 2px dotted #cccccc;
+    }
+	.map_image {	 
+	   margin: 50px 50px 150px 150px;
+	}
+		
+	#side_image {
+	  display: inline-block;
+	  float: left;
+	 /*  border: 1px solid blue;	   */
+	 /*  height: 800px; */
+	  
+	}
+	.img2 {	 
+	  display: inline-block;
+	  width:100px;
+	  margin: 10px 5px 20px;
+	  border-radius : 10px;
+	}	
+	
+/* 태욱이가 추가한 스타일 부분 */
+
+	#aaa {
+	background-color: #333;
+	color: white;
+	border: 1px solid blue;
+	font-size: 20px;
+	width: 200px;
+	}
+
+	#bbb {
+		font-size: 12px;
+	}
+	
+
+	

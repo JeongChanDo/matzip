@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+
+body {
+     margin : 0;
+    } 
+    #contain {
+      margin: 0 auto;
+      overflow:hidden;
+    }
+
+	
+	#video {
+	  /* border: 1px solid red; */  
+	  float: left;	 
+	  margin: 0px 27px; 
+	}
+	.video {	 
+	  float:left;
+      width: 350px;
+	  height: 150px;
+	  margin: 10px 70px;
+	  border-radius: 10px;		
+	}	
+	
+	body, th, td { 
+		font:0.9em "맑은 고딕",돋움,sans-serif;
+	}		
+	
+#adminDiv{
+	margin-left:250px;
+	padding-left:10px;
+}

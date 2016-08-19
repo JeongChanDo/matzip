@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+
+#member_login{
+    text-align: center;
+    text-shadow: 5px 5px 5px #ccc;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+
+#loginForm {
+   /*  border: 1px solid #DDDDDD; */
+    /* width: 400px; */
+   /*  margin: 200px auto; */
+    padding: 50px 80px;
+    background: white;
+}
+#loginBtn {
+   margin: 20px 50px;
+}
+#loading{
+    width: 100%;

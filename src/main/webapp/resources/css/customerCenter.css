@@ -1,0 +1,93 @@
+@CHARSET "UTF-8";
+
+/*
+    고객센터 화면을 위한 CSS
+  1) header
+  2) nav 
+  3) side : 회원사진 / 로그아웃 / 나의정보
+  4) board 
+  5) recipe
+  6) video
+  7) footer	  
+  */
+  
+	
+	
+/* 게시판 영역 */
+	
+	body, th, td { 
+		font:0.9em "맑은 고딕",돋움,sans-serif;
+	}
+		
+	#board {
+	  display: inline-block;
+	  float:left;
+	  /* border: 1px solid red; */ 
+	  width: 400px; 
+	  margin: 10px 10px 0px 45px;
+	}	
+	#boardDesign {		
+		border-collapse:collapse;
+		margin:0 auto; 
+	}
+	#boardDesign caption {
+		display:none;
+	}
+	#boardDesign th {
+		padding:10px 30px;
+		border-top:1px solid #333;
+		border-bottom:1px solid #333;
+		background-color:#efefef;
+	}
+	#boardDesign th:first-child	{
+		width:50px;
+	}
+	#boardDesign th:nth-child(2)	{
+		width:50px;
+	}
+	#boardDesign th:nth-child(3)	{
+		width:50px;
+	}
+	#boardDesign th:nth-child(4)	{
+		width:50px;
+	}
+	#boardDesign th:nth-child(5)	{
+		width:50px;
+	}	
+	#boardDesign td {
+		padding:8px 0px;
+		text-align:center;
+		border-bottom:1px solid #333;
+	}
+	#boardDesign td.boardTitle {
+		text-align:left;
+	}	
+	#boardDesign .trHover:hover {
+		background-color: #EAEAEA;
+	}		
+	.seaTabs {
+	  display: none;
+	}
+
+
+/* 추천 레시피 영역 */
+
+	#wrap2{
+		/* border: 1px solid red;	 */	 
+		display: inline-block;	
+	}
+	#recipe {
+	  float: left;	   
+	  clear: both; 
+	  /* border: 1px solid red; */	   
+	  /* display: none;   */ 
+	  margin: 0px 10px 10px auto;	  
+	}
+	.img3 {	  
+	  float: left;
+	  width:110px;
+	  height: 150px;
+	  margin: 10px 0px 10px 20px;
+	  border-radius : 10px; 
+	}
+	

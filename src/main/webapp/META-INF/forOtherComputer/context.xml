@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Resource name="jdbc/MatZip"
+		auth="Container"
+		type="javax.sql.DataSource"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://192.168.137.74:3306/matzip"
+		username="root"
+		password="12345678"
+		maxTotal="20"
+		maxIdle="10"
+		maxWaitMillis="-1"
+		removeAbandonedOnBorrow="false"
+		removeAbandonedTimeout="60"/>
+</Context>

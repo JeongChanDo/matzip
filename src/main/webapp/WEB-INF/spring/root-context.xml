@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.8.xsd">
+	
+	<import resource="classpath:datasource/datasource.xml"/>
+
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" c:dataSource-ref="dataSource"/>
+	
+	<bean id="namedParamJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate" c:dataSource-ref="dataSource"/>
+	
+
+	<mongo:mongo id="mongo" host="192.168.137.74" port="27017"/>
+	
+	<mongo:db-factory id="mongoDbFactory" mongo-ref="mongo" dbname="MatZip"/>
+	
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
+	</bean>
+	<bean id="mongoClient" class="com.mongodb.MongoClient"
+		c:host="192.168.137.74" c:port="27017" />
+	
+	<bean id="multipartResolver" 
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+	
+	<!--
+		 마이바티스 의존성주입
+		sqlSessionFactory 빈 설정
+		jdbc기반 트랜잭션 관리하는 TransactionManager 빈 생성  dataSource 프로퍼티 주입
+		sqlSessionTemplate 생성  sqlSessionFactory 생성자 주입
+	 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="configLocation" value="classpath:mybatis-config.xml"/>
+		<property name="typeAliasesPackage" value="com.matzip.app.djc.domain"/>
+	</bean>
+	
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" p:dataSource-ref="dataSource"/>
+	
+	<bean id="sqlSesstionTemplate" class="org.mybatis.spring.SqlSessionTemplate"
+		c:sqlSessionFactory-ref="sqlSessionFactory"/>
+	
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource" >
+		<property name="basenames">
+			<list>
+				<value>message/titleMessages</value>
+			</list>
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,75 @@
+@CHARSET "UTF-8";
+
+/*
+  home 화면을 위한 CSS
+  1) header
+  2) home_menu
+  3) footer	
+  
+  */
+  
+/* 홈메뉴영역 */
+
+	#contain {	  	  
+	  /* border: 1px solid red; */
+      background-image:url(http://preview.clipartkorea.co.kr/2009/09/15/069a0009.jpg); 
+      /* background-color: green; */
+      background-position: center;
+      background-attachment: fixed;      
+      background-size: 100%;
+      min-height:89%;
+      repeat: no-repeat;      	      
+    }  
+  	
+
+	#home_menu {
+	  height : 85%
+	  /* display: inline; */
+	  margin: 0px auto;	
+	  text-align:center;
+	  padding : 10px 10px 10px 10px;	  
+	 
+	}
+    #home_menu1 {
+      float: left;
+      /* border: 1px solid red; */
+      margin: 300px 30px 200px 60px;
+      width: 200px;   
+      height: 200px;   
+      border-radius: 50px;
+      background-color: #3498DB;
+    }
+	#home_menu2 {	 
+      float: left;
+      /* border: 1px solid red; */
+      margin: 300px 30px 200px 60px;
+      width: 200px;   
+      height: 200px;   
+      border-radius: 50px;   
+      background-color: #D35400;  
+    }
+    #home_menu3 {
+      float: left;
+      /* border: 1px solid red; */
+      margin: 300px 30px 200px 60px;
+      width: 200px;   
+      height: 200px;   
+      border-radius: 50px;    
+      background-color: #9B59B6;
+    }
+    #home_menu4 {
+      float: left;
+      /* border: 1px solid red; */
+      margin: 300px 30px 200px 60px;
+      width: 200px;   
+      height: 200px;   
+      border-radius: 50px; 
+      background-color: #2ECC71; 
+    }
+    .menu_text {
+      font-family: sans-serif;
+      font-weight: bolder;         
+      margin : 75px 0px 0px 40px;
+    }
+	
+	
